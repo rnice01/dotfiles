@@ -1,0 +1,44 @@
+{
+	"workbench.colorTheme": "Nord",
+	"vim.statusBarColorControl": true,
+	"vim.handleKeys": {
+		"<C-d>": true,
+	},
+	"editor.renderWhitespace": "all",
+	"git.autofetch": true,
+	"editor.tabSize": 4,
+	"[json]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2
+	},
+	"[javascript]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2
+	},
+	"[html]": {
+		"editor.tabSize": 2
+	},
+	"[sass]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2
+	},
+	"[vue]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2
+	},
+	"window.zoomLevel": 0,
+	"editor.fontLigatures": true,
+	"editor.lineHeight": 18,
+	"editor.lineNumbers": "relative",
+	"javascript.format.enable": true,
+	"eslint.options": {
+	},
+	"breadcrumbs.enabled": true,
+	"editor.fontSize": 12,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#005f5f",
+		"statusBar.noFolderBackground": "#005f5f",
+		"statusBar.debuggingBackground": "#005f5f"
+	},
+	"editor.minimap.enabled": false
