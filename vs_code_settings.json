@@ -46,6 +46,13 @@
                 ":q",
             ]
         },
+				{
+					"before": ["leader", "w"],
+					"commands" :[
+						"<C-w>",
+						"w"
+					]
+				}
     ],
 
     //====== Indentation Nightmares =======
