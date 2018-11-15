@@ -17,7 +17,7 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'rakr/vim-two-firewatch'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'posva/vim-vue'
-Plugin 'valloric/youcompleteme'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'sirver/ultisnips'
 Plugin 'w0rp/ale'
 call vundle#end()            " required
@@ -105,11 +105,15 @@ set undodir=~/.vim/undo
 """"""""""""""""""""""""""""""""""
 " File Type Indentations
 """"""""""""""""""""""""""""""""""
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype cs setlocal smarttab cindent autoindent noexpandtab ts=4 sts=4 sw=4
+autocmd Filetype php setlocal smarttab cindent autoindent noexpandtab ts=4 sts=4 sw=4
+autocmd Filetype ruby setlocal ts=2  sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2  sw=2 expandtab
+autocmd Filetype jsx setlocal ts=2  sw=2 expandtab
+autocmd Filetype pug setlocal ts=2  sw=2 expandtab
+autocmd Filetype vue setlocal ts=2  sw=2 expandtab
+autocmd Filetype sass setlocal ts=2  sw=2 expandtab
+
 
 """"""""""""""""""""""""""""""""""
 " OmniSharp Configs
@@ -118,6 +122,7 @@ autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 let g:OmniSharp_server_path = 'C:\OmniSharp\OmniSharp.exe'
 let g:OmniSharp_selector_ui = 'ctrlp'
 let g:ale_linters = { 'cs': ['OmniSharp'] }
+let g:deoplete#enable_at_startup = 1
 set completeopt=longest,menuone,preview
 
 augroup omnisharp_commands
