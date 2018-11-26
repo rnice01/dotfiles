@@ -101,18 +101,27 @@ set undofile
 set undolevels=5000
 set undodir=~/.vim/undo
 
+" Toggle relative line numbers
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
 
 """"""""""""""""""""""""""""""""""
 " File Type Indentations
 """"""""""""""""""""""""""""""""""
-autocmd Filetype cs setlocal smarttab cindent autoindent noexpandtab ts=4 sts=4 sw=4
-autocmd Filetype php setlocal smarttab cindent autoindent noexpandtab ts=4 sts=4 sw=4
-autocmd Filetype ruby setlocal ts=2  sw=2 expandtab
-autocmd Filetype javascript setlocal ts=2  sw=2 expandtab
-autocmd Filetype jsx setlocal ts=2  sw=2 expandtab
-autocmd Filetype pug setlocal ts=2  sw=2 expandtab
-autocmd Filetype vue setlocal ts=2  sw=2 expandtab
-autocmd Filetype sass setlocal ts=2  sw=2 expandtab
+autocmd Filetype cs setlocal smarttab cindent autoindent noexpandtab ts=4 sw=4
+autocmd Filetype php setlocal smarttab cindent autoindent noexpandtab ts=4 sw=4
+autocmd Filetype ruby setlocal sts=2  sw=2 expandtab
+autocmd Filetype javascript setlocal sts=2  sw=2 expandtab
+autocmd Filetype jsx setlocal sts=2  sw=2 expandtab
+autocmd Filetype pug setlocal sts=2  sw=2 expandtab
+autocmd Filetype vue setlocal sts=2  sw=2 expandtab
+autocmd Filetype sass setlocal sts=2  sw=2 expandtab
 
 
 """"""""""""""""""""""""""""""""""
