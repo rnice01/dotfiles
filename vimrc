@@ -114,14 +114,14 @@ set undodir=~/.vim/undo
 """"""""""""""""""""""""""""""""""
 " File Type Indentations
 """"""""""""""""""""""""""""""""""
-autocmd Filetype cs setlocal smarttab cindent autoindent noexpandtab ts=4 sw=4
-autocmd Filetype php setlocal smarttab cindent autoindent noexpandtab ts=4 sw=4
-autocmd Filetype ruby setlocal sts=2  sw=2 expandtab
+autocmd Filetype cs setlocal cindent autoindent expandtab sts=4 sw=4
 autocmd Filetype javascript setlocal sts=2  sw=2 expandtab
 autocmd Filetype jsx setlocal sts=2  sw=2 expandtab
+autocmd Filetype php setlocal cindent noexpandtab ts=4 sw=4
 autocmd Filetype pug setlocal sts=2  sw=2 expandtab
-autocmd Filetype vue setlocal sts=2  sw=2 expandtab
+autocmd Filetype ruby setlocal sts=2  sw=2 expandtab
 autocmd Filetype sass setlocal sts=2  sw=2 expandtab
+autocmd Filetype vue setlocal sts=2  sw=2 expandtab
 
 
 """"""""""""""""""""""""""""""""""
