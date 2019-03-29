@@ -51,6 +51,11 @@ let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 
+""""""""""""""""""""""""""""""""""
+" CtrlP
+""""""""""""""""""""""""""""""""""
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp)|(\.(swp|ico|git|svn))$'
+
 """"""""""""""""""""""""""""""""""""
 " GUI
 """"""""""""""""""""""""""""""""""""
