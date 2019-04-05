@@ -4,21 +4,47 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'bling/vim-airline'
-Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plugin 'tpope/vim-fugitive'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'kien/ctrlp.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'scrooloose/nerdtree'
-Plugin 'shougo/deoplete.nvim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+
+" Editor plugins
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+" File tree and search
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+
+" autocompletion
+Plugin 'shougo/deoplete.nvim'
+Plugin 'phpactor/phpactor', {'do': 'composer install', 'for': 'php'}
+Plugin 'kristijanhusak/deoplete-phpactor'
+Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+" Linting
+Plugin 'vim-syntastic/syntastic'
+
+" UI
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mhinz/vim-startify'
+Plugin 'morhetz/gruvbox'
+
+" Shell
+Plugin 'shougo/deol.nvim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+""""""""""""""""""""""""""""""""""
+" Startup
+""""""""""""""""""""""""""""""""""
+ autocmd VimEnter *
+                 \   if !argc()
+                 \ |   Startify
+                 \ |   NERDTree
+                 \ |   wincmd w
+                 \ | endif
 
 """"""""""""""""""""""""""""""""""
 " Syntastic
@@ -45,10 +71,15 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ ]
 
 """"""""""""""""""""""""""""""""""
+" Deol
+""""""""""""""""""""""""""""""""""
+tnoremap <ESC> <C-\><C-n>
+""""""""""""""""""""""""""""""""""
 " Nerdtree
 """"""""""""""""""""""""""""""""""
-let NERDTreeShowHidden=0
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinPos = 'right'
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 
 """"""""""""""""""""""""""""""""""
@@ -66,8 +97,7 @@ let g:gruvbox_contrast_dark='dark'
 
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='onedark'
 set guifont="SauceCodePro Nerd Font Mono:h11"
 
 
@@ -91,12 +121,6 @@ nmap <leader>2 :@:<cr>
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
-
-" Rspec plugin keymaps
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " Map space + number 1-9 to change window buffer
 let i = 1
