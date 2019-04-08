@@ -74,6 +74,12 @@ let g:deoplete#sources#ternjs#filetypes = [
 " Deol
 """"""""""""""""""""""""""""""""""
 tnoremap <ESC> <C-\><C-n>
+
+function DeolShell()
+	execute 'below new'
+	execute 'Deol -start-insert'
+endfunction
+nnoremap <space>' :call DeolShell()<CR>
 """"""""""""""""""""""""""""""""""
 " Nerdtree
 """"""""""""""""""""""""""""""""""
