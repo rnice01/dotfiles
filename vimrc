@@ -2,7 +2,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -13,13 +14,17 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " File tree and search
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 
 " autocompletion
 Plugin 'shougo/deoplete.nvim'
 Plugin 'phpactor/phpactor', {'do': 'composer install', 'for': 'php'}
 Plugin 'kristijanhusak/deoplete-phpactor'
 Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'StanAngeloff/php.vim'
 
 " Linting
 Plugin 'vim-syntastic/syntastic'
@@ -29,9 +34,6 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mhinz/vim-startify'
 Plugin 'morhetz/gruvbox'
-
-" Shell
-Plugin 'shougo/deol.nvim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,6 +65,8 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:deoplete#sources = {}
+let g:deoplete#sources.php = ['omni', 'phpactor', 'ultisnips', 'buffer']
 let g:deoplete#sources#ternjs#case_insensitive = 1
 let g:deoplete#sources#ternjs#filetypes = [
                 \ 'jsx',
@@ -71,15 +75,19 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ ]
 
 """"""""""""""""""""""""""""""""""
-" Deol
+" Ultisnips
 """"""""""""""""""""""""""""""""""
-tnoremap <ESC> <C-\><C-n>
+let g:ultisnips_php_scalar_types = 1
 
-function DeolShell()
-	execute 'below new'
-	execute 'Deol -start-insert'
-endfunction
-nnoremap <space>' :call DeolShell()<CR>
+
+""""""""""""""""""""""""""""""""""
+" Supertab
+""""""""""""""""""""""""""""""""""
+" Supertab reverses the tab seletion by default
+" so this changes back to normalcy
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+
 """"""""""""""""""""""""""""""""""
 " Nerdtree
 """"""""""""""""""""""""""""""""""
@@ -89,9 +97,11 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 
 """"""""""""""""""""""""""""""""""
-" CtrlP
+" FZF
 """"""""""""""""""""""""""""""""""
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp)|(\.(swp|ico|git|svn))$'
+nnoremap <C-p> :Files<Cr>
+nnoremap <C-t> :Rg<Cr>
+
 
 """"""""""""""""""""""""""""""""""""
 " GUI
@@ -161,5 +171,5 @@ set undodir=~/.vim/undo
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal expandtab ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal expandtab ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype php setlocal expandtab ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal expandtab ts=2 sts=2 sw=2
