@@ -1,0 +1,32 @@
+[
+	{
+		"key": "ctrl+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.quickOpenNavigateNextInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+shift+p",
+		"command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	}
+]

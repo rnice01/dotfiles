@@ -1,0 +1,55 @@
+{
+    "extensions.ignoreRecommendations": true,
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "files.eol": "\n",
+    "explorer.autoReveal": "focusNoScroll",
+    "window.zoomLevel": 1,
+    //======= VIM Settings =====
+    "vim.leader": ",",
+    "vim.sneak": true,
+    "vim.statusBarColorControl": true,
+    "vim.handleKeys": {
+        "<C-u>": true,
+        "<C-d>": true,
+        "<C-f>": false,
+        "<C-k>": false,
+        "<C-j>": false,
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [{
+            "before": ["leader", "e"],
+            "commands": [
+                ":nohl",
+            ]
+        },
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+        {
+            "before": ["leader", "q"],
+            "commands": [
+                ":q",
+            ]
+        },
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "<C-w>",
+                "w"
+            ]
+        }
+    ],
+    "vim.smartRelativeLine": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#005f5f",
+      "statusBar.noFolderBackground": "#005f5f",
+      "statusBar.debuggingBackground": "#005f5f"
+    }
+}
