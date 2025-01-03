@@ -1,0 +1,108 @@
+{
+  "extensions.ignoreRecommendations": true,
+  "files.eol": "\n",
+  "explorer.autoReveal": false,
+  //======= VIM Settings =====
+  "vim.leader": "<space>",
+  "vim.sneak": true,
+  "vim.statusBarColorControl": true,
+  "vim.handleKeys": {
+    "<C-u>": true,
+    "<C-d>": true,
+    "<C-f>": false,
+    "<C-k>": false,
+    "<C-j>": false
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "m"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "b"
+      ],
+      "after": [
+        "g",
+        "T"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "n"
+      ],
+      "after": [
+        "g",
+        "t"
+      ]
+    },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "leader",
+        "e"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.saveWithoutFormatting"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "q"
+      ],
+      "commands": [
+        ":q"
+      ]
+    },
+  ],
+  "vim.smartRelativeLine": true,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "ProggyVector",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "elmLS.onlyUpdateDiagnosticsOnSave": true,
+  "rust-client.rustupPath": "/Users/robnice/.cargo/bin/rustup",
+  "haskell.manageHLS": "GHCup",
+  "settingsSync.ignoredExtensions": [
+    "benjamin-thomas.roc-lang-support"
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "tailwindCSS.includeLanguages": {
+    "elm": "html"
+  },
+  "editor.formatOnSave": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorTheme": "Material Theme Ocean"
+}
