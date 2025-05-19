@@ -1,1 +1,39 @@
-keymap.json
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace && vim_mode == normal",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "space b n": "pane::ActivateNextItem",
+      "space b b": "pane::ActivatePreviousItem",
+      "space t": "tab_switcher::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "space b n": "pane::ActivateNextItem",
+      "space b b": "pane::ActivatePreviousItem",
+      "space t": "tab_switcher::Toggle"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "use_key_equivalents": true,
+    "bindings": {
+      "k": "menu::SelectPrevious",
+      "j": "menu::SelectNext"
+    }
+  }
+]
